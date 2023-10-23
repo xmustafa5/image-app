@@ -1,6 +1,11 @@
 <template>
-  <div>
-  </div>
+  <VApp>
+    <!-- sidebar -->
+    <VMain>
+    
+    </VMain>
+  </VApp>
+  
 </template>
 
 
