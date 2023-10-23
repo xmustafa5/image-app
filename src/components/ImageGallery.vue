@@ -1,10 +1,12 @@
 <template>
-    <VRow class="ma-0">
+    <vCard class="mx-5 my-2 pa-3">
+    <VRow >
         <VCol v-for="n in 200" :key="n"
          cols="6"
          sm="4"
          md="3"
          lg="1"
+        
          >
             <VCard>
                 <VImg 
@@ -12,7 +14,7 @@
                  aspect-ratio="1" cover>
                     <template v-slot:placeholder>
                         <VRow 
-                        class="fill-height ma-0" 
+                        class="fill-height " 
                         align="center" 
                         justify="center">
                         <VProgressCircular
@@ -26,4 +28,5 @@
             </VCard>
         </VCol>
     </VRow>
+</vCard>
 </template>
