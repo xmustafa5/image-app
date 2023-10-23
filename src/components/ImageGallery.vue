@@ -5,8 +5,10 @@ const p = defineProps({
     iswithColor:Boolean
 })
 
-const copyUrl = async (url) => {
-  await navigator.clipboard.writeText(url);
+const copyUrl =  (url) => {
+    const textArea = document.createElement("textarea");
+  textArea.value = url;
+ 
   showAlert();
 };
 const showAlert = () => {
@@ -60,15 +62,30 @@ const showAlert = () => {
         </VCol>
     </VRow>
 </vCard>
-<div :style="{position: 'absolute ', top:' 8px' , left: '8pc'}" class="w-25 ">
-    <v-alert v-if="alertVisible" title="copy seccuss"  type="success" ></v-alert>
+<div class="secuuss  ">
+    <v-alert  v-if="alertVisible" title="copy seccuss"  type="success" ></v-alert>
 
 </div>
 </template>
 
 <style>
-.mus{
+.secuuss{
+    width: 15%;
     position: absolute;
-    top: ;
+    top: 8px;
+    left: 8pc
+}
+@media screen and (min-width: 100px) and (max-width: 999px) {
+    .secuuss{
+    width: 60%;
+    position: absolute;
+    top: 8px;
+    left:1pc;
+   
+}
+.alert {
+    font-size: 10pc !important;
+    background: red !important;
+}
 }
 </style>
