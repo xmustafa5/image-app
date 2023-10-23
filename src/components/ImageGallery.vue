@@ -1,12 +1,22 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
+const alertVisible = ref(false)
 const p = defineProps({
     iswithColor:Boolean
 })
 
-const copyUrl = async (url)=>{
-    await navigator.clipboard.writeText(url).then(alert('coped'))
-}
+const copyUrl = async (url) => {
+  await navigator.clipboard.writeText(url);
+  showAlert();
+};
+const showAlert = () => {
+  alertVisible.value = true;
+  setTimeout(() => {
+    alertVisible.value = false;
+
+  }, 1000);
+};
+
 </script>
 
 <template>
@@ -50,4 +60,15 @@ const copyUrl = async (url)=>{
         </VCol>
     </VRow>
 </vCard>
+<div :style="{position: 'absolute ', top:' 8px' , left: '8pc'}" class="w-25 ">
+    <v-alert v-if="alertVisible" title="copy seccuss"  type="success" ></v-alert>
+
+</div>
 </template>
+
+<style>
+.mus{
+    position: absolute;
+    top: ;
+}
+</style>
