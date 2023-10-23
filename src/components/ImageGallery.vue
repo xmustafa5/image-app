@@ -20,7 +20,7 @@ const p = defineProps({
          >
             <VCard>
                 <VImg 
-                :src="`https://picsum.photos/500/300?image=${n * 5 + 10}${p.iswithColor ? '&grayscale' : ''}`"
+                :src="`https://picsum.photos/500/300?image=${n * 5 + 10}${p.iswithColor ? '' : '&grayscale'}`"
                  aspect-ratio="1" cover>
                     <template v-slot:placeholder>
                         <VRow 

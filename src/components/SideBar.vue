@@ -3,8 +3,8 @@ import { defineEmits } from 'vue'
 
 const emits = defineEmits(['selectOption'])
 
-const selectOption = (isColor) => {
-  emits('selectOption', isColor)
+const selectOption = (red) => {
+  emits('selectOption', red)
 }
 </script>
 
