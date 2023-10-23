@@ -4,7 +4,9 @@ const p = defineProps({
     iswithColor:Boolean
 })
 
-
+const copyUrl = async (url)=>{
+    await navigator.clipboard.writeText(url).then(alert('coped'))
+}
 </script>
 
 <template>
@@ -18,7 +20,15 @@ const p = defineProps({
          lg="1"
         
          >
-            <VCard>
+         <VHover
+         v-slots="{isHovering, props}"
+         >
+         
+            <VCard
+            @click="copyUrl(`https://picsum.photos/500/300?image=${n * 5 + 10}${p.iswithColor ? '' : '&grayscale'}`)"
+            :elevation="isHovering ? 12:2"
+            v-bind:="props"
+            >
                 <VImg 
                 :src="`https://picsum.photos/500/300?image=${n * 5 + 10}${p.iswithColor ? '' : '&grayscale'}`"
                  aspect-ratio="1" cover>
@@ -36,6 +46,7 @@ const p = defineProps({
                     </template>
                 </VImg>
             </VCard>
+        </VHover>
         </VCol>
     </VRow>
 </vCard>

@@ -9,7 +9,7 @@ const onSlelectOption = (isColor)=>{
 </script>
 <template>
   <VApp>
-    {{ iswithColor }}
+   
     <SideBar @selectOption="onSlelectOption"/>
     <VMain>
       <ImageGallery :iswithColor="iswithColor"/>
